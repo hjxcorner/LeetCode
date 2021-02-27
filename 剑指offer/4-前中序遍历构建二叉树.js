@@ -29,10 +29,6 @@ function TreeNode(val) {
   this.left = this.right = null;
 }
 
-var buildTree = function (preorder, inorder) {
-
-};
-
 function foo(preorder, inorder) {
   if (preorder.length === 0 || inorder.length === 0) return null;
   let root = preorder[0]

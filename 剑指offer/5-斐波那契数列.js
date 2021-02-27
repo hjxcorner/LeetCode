@@ -8,23 +8,19 @@
 
 
 var fib = function(n) {
-  let a = 0, b = 1, c
+  let a = 0, b = 1, c = 0
   if (n < 2) return n
-  for (let i = 2; i <= n; i ++) {
-      c = a + b
-      a = b
-      b = c
+  while (n >= 2){
+      c = (a + b) % 1000000007
+      a = b % 1000000007
+      b = c % 1000000007
+      n --
   }
-  return c % 1000000007
+  return c
 };
-
-// var fib = function(n) {
-//   if (n < 2) return n
-//   return (fib(n - 1) + fib(n - 2)) % 1000000007
-// };
 
 console.log(fib(79));
 
 
-// js的精度有误差  
+// js的精度有误差  所有需要在循环里面取模
 // 9999999999999999 == 10000000000000001 // true
